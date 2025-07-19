@@ -3,89 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revive App V2 - Test de Connexions</title>
+    <title>Photo Magique - Création de Contenu Visuel</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <h1>🚀 Revive App V2</h1>
-            <p>Test de connexions Railway & GitHub</p>
-        </header>
+    <div id="app">
+        <!-- Landing Page -->
+        <div id="landing" class="landing-page">
+            <header class="landing-header">
+                <div class="logo">
+                    <i class="fas fa-magic"></i>
+                    <span>Photo Magique</span>
+                </div>
+            </header>
 
-        <main class="main">
-            <div class="status-grid">
-                <div class="status-card" id="server-status">
-                    <div class="card-header">
-                        <h3>🖥️ Serveur</h3>
-                        <div class="status-indicator" id="server-indicator"></div>
+            <main class="landing-main">
+                <section class="hero">
+                    <div class="hero-content">
+                        <h1>Transformez vos idées en contenu visuel magique</h1>
+                        <p>Créez des visuels professionnels avec nos outils intelligents. Une photo, une vidéo, des résultats époustouflants.</p>
+                        <button class="cta-button" onclick="showDashboard()">
+                            <i class="fas fa-rocket"></i>
+                            Commencer maintenant
+                        </button>
                     </div>
-                    <div class="card-content">
-                        <p>Statut du serveur Express</p>
-                        <div class="status-details" id="server-details">
-                            <span class="loading">Vérification en cours...</span>
+                    <div class="hero-visual">
+                        <div class="floating-card">
+                            <i class="fas fa-camera"></i>
+                            <span>Photo</span>
+                        </div>
+                        <div class="floating-card">
+                            <i class="fas fa-video"></i>
+                            <span>Vidéo</span>
+                        </div>
+                        <div class="floating-card result">
+                            <i class="fas fa-star"></i>
+                            <span>Résultat</span>
                         </div>
                     </div>
-                    <button class="test-btn" onclick="testServer()">Tester</button>
-                </div>
+                </section>
 
-                <div class="status-card" id="railway-status">
-                    <div class="card-header">
-                        <h3>🚂 Railway</h3>
-                        <div class="status-indicator" id="railway-indicator"></div>
-                    </div>
-                    <div class="card-content">
-                        <p>Connexion à Railway</p>
-                        <div class="status-details" id="railway-details">
-                            <span class="loading">Vérification en cours...</span>
+                <section class="features">
+                    <h2>Pourquoi choisir Photo Magique ?</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-bolt"></i>
+                            <h3>Rapide & Simple</h3>
+                            <p>Créez votre contenu en quelques clics avec notre interface intuitive</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Sécurisé</h3>
+                            <p>Vos fichiers sont protégés et traités de manière sécurisée</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-magic"></i>
+                            <h3>IA Intelligente</h3>
+                            <p>Notre IA optimise automatiquement vos visuels</p>
                         </div>
                     </div>
-                    <button class="test-btn" onclick="testRailway()">Tester</button>
-                </div>
+                </section>
+            </main>
 
-                <div class="status-card" id="github-status">
-                    <div class="card-header">
-                        <h3>🐙 GitHub</h3>
-                        <div class="status-indicator" id="github-indicator"></div>
+            <footer class="landing-footer">
+                <p>&copy; 2024 Photo Magique. Tous droits réservés.</p>
+            </footer>
+        </div>
+
+        <!-- Dashboard -->
+        <div id="dashboard" class="dashboard-page" style="display: none;">
+            <header class="dashboard-header">
+                <div class="dashboard-nav">
+                    <button class="back-btn" onclick="showLanding()">
+                        <i class="fas fa-arrow-left"></i>
+                        Retour
+                    </button>
+                    <div class="logo">
+                        <i class="fas fa-magic"></i>
+                        <span>Photo Magique</span>
                     </div>
-                    <div class="card-content">
-                        <p>Connexion à GitHub</p>
-                        <div class="status-details" id="github-details">
-                            <span class="loading">Vérification en cours...</span>
+                    <div class="user-info">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                </div>
+            </header>
+
+            <main class="dashboard-main">
+                <div class="dashboard-content">
+                    <div class="welcome-section">
+                        <h1>Bienvenue dans votre espace créatif</h1>
+                        <p>Créez jusqu'à 5 blocs de contenu avec 1 photo et 1 vidéo par bloc</p>
+                    </div>
+
+                    <div class="upload-section">
+                        <div class="upload-blocks" id="uploadBlocks">
+                            <!-- Les blocs d'upload seront générés ici -->
+                        </div>
+                        
+                        <div class="add-block-section">
+                            <button class="add-block-btn" onclick="addUploadBlock()" id="addBlockBtn">
+                                <i class="fas fa-plus"></i>
+                                Ajouter un bloc
+                            </button>
+                            <p class="block-limit">Maximum 5 blocs</p>
                         </div>
                     </div>
-                    <button class="test-btn" onclick="testGitHub()">Tester</button>
+
+                    <div class="customer-info-section">
+                        <h2>Informations client</h2>
+                        <form id="customerForm" class="customer-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="customerName">Nom complet</label>
+                                    <input type="text" id="customerName" name="customerName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="customerEmail">Email</label>
+                                    <input type="email" id="customerEmail" name="customerEmail" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="customerPhone">Téléphone</label>
+                                <input type="tel" id="customerPhone" name="customerPhone">
+                            </div>
+                            <div class="form-group">
+                                <label for="customerMessage">Message (optionnel)</label>
+                                <textarea id="customerMessage" name="customerMessage" rows="3"></textarea>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="order-summary">
+                        <h2>Résumé de la commande</h2>
+                        <div class="summary-content">
+                            <div class="summary-item">
+                                <span>Blocs créés:</span>
+                                <span id="blocksCount">0/5</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Total:</span>
+                                <span id="totalPrice">0€</span>
+                            </div>
+                        </div>
+                        <button class="submit-order-btn" onclick="submitOrder()" disabled>
+                            <i class="fas fa-check"></i>
+                            Valider la commande
+                        </button>
+                    </div>
                 </div>
-            </div>
-
-            <div class="info-section">
-                <h2>📊 Informations Système</h2>
-                <div class="info-grid">
-                    <div class="info-item">
-                        <strong>Port:</strong> <span id="port-info">-</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Environnement:</strong> <span id="env-info">-</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>URL Railway:</strong> <span id="railway-url">-</span>
-                    </div>
-                    <div class="info-item">
-                        <strong>Branch:</strong> <span id="branch-info">-</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="action-section">
-                <button class="primary-btn" onclick="runAllTests()">🧪 Lancer tous les tests</button>
-                <button class="secondary-btn" onclick="refreshPage()">🔄 Actualiser</button>
-            </div>
-        </main>
-
-        <footer class="footer">
-            <p>Revive App V2 - Test de déploiement Railway & GitHub</p>
-        </footer>
+            </main>
+        </div>
     </div>
 
     <script src="script.js"></script>
