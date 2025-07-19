@@ -29,8 +29,8 @@ Cette application web simple permet de tester et valider :
 
 1. **Cloner le repository**
 ```bash
-git clone https://github.com/votre-username/revive-app-V2.git
-cd revive-app-V2
+git clone https://github.com/ledesseinduneideecontact/revive-app.git
+cd revive-app
 ```
 
 2. **Installer les dépendances**
@@ -63,7 +63,7 @@ git push origin main
    - Aller sur [Railway.app](https://railway.app)
    - Créer un nouveau projet
    - Choisir "Deploy from GitHub repo"
-   - Sélectionner votre repository `revive-app-V2`
+   - Sélectionner votre repository `revive-app`
 
 3. **Configuration automatique**
    - Railway détectera automatiquement le `package.json`
@@ -142,7 +142,7 @@ L'interface web permet de :
 ## 📁 Structure du projet
 
 ```
-revive-app-V2/
+revive-app/
 ├── public/
 │   ├── index.html      # Page principale
 │   ├── styles.css      # Styles CSS
@@ -209,4 +209,4 @@ Pour toute question ou problème :
 
 ---
 
-**Développé avec ❤️ pour tester Railway et GitHub** 
+**Développé avec ❤️ pour tester Railway et GitHub**
