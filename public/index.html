@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revive App V2 - Test de Connexions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🚀 Revive App V2</h1>
+            <p>Test de connexions Railway & GitHub</p>
+        </header>
+
+        <main class="main">
+            <div class="status-grid">
+                <div class="status-card" id="server-status">
+                    <div class="card-header">
+                        <h3>🖥️ Serveur</h3>
+                        <div class="status-indicator" id="server-indicator"></div>
+                    </div>
+                    <div class="card-content">
+                        <p>Statut du serveur Express</p>
+                        <div class="status-details" id="server-details">
+                            <span class="loading">Vérification en cours...</span>
+                        </div>
+                    </div>
+                    <button class="test-btn" onclick="testServer()">Tester</button>
+                </div>
+
+                <div class="status-card" id="railway-status">
+                    <div class="card-header">
+                        <h3>🚂 Railway</h3>
+                        <div class="status-indicator" id="railway-indicator"></div>
+                    </div>
+                    <div class="card-content">
+                        <p>Connexion à Railway</p>
+                        <div class="status-details" id="railway-details">
+                            <span class="loading">Vérification en cours...</span>
+                        </div>
+                    </div>
+                    <button class="test-btn" onclick="testRailway()">Tester</button>
+                </div>
+
+                <div class="status-card" id="github-status">
+                    <div class="card-header">
+                        <h3>🐙 GitHub</h3>
+                        <div class="status-indicator" id="github-indicator"></div>
+                    </div>
+                    <div class="card-content">
+                        <p>Connexion à GitHub</p>
+                        <div class="status-details" id="github-details">
+                            <span class="loading">Vérification en cours...</span>
+                        </div>
+                    </div>
+                    <button class="test-btn" onclick="testGitHub()">Tester</button>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h2>📊 Informations Système</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <strong>Port:</strong> <span id="port-info">-</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Environnement:</strong> <span id="env-info">-</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>URL Railway:</strong> <span id="railway-url">-</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Branch:</strong> <span id="branch-info">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-section">
+                <button class="primary-btn" onclick="runAllTests()">🧪 Lancer tous les tests</button>
+                <button class="secondary-btn" onclick="refreshPage()">🔄 Actualiser</button>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Revive App V2 - Test de déploiement Railway & GitHub</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
